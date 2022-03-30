@@ -1,26 +1,11 @@
-/* ELEMENT Selectors */
-
+/*** HTML SELECTORS ***/
 body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
-  font-size: 3.5rem;
-  line-height: 1.5;
-  font-weight: 900;
-}
-
-h2 {
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-h3 {
-  font-family: "Montserrat";
-  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -28,16 +13,40 @@ p {
   color: #8f8f8f;
 }
 
-/* CLASS Selectors */
+/* Containers */
 .container-fluid {
-  padding: 3% 15%;
+  /* This gives 3% top, 15% left and right, and 7% bottom padding */
+  padding: 7% 15%;
 }
 
+/* Sections */
 
-/* Navigation Bar */
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Headings */
+.big-heading {
+  font-family: "Montserrat";
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+.secion-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Navigation Bar  */
 
 .navbar {
- padding: 0 0 4.5rem;
+  padding: 0 0 4.5rem;
 }
 
 .navbar-brand {
@@ -53,13 +62,15 @@ p {
 .nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat";
-  font-weight: 100;
+  font-weight: light;
 }
 
-/* Download Buttons */
+/* Title Section */
 
-.download-button {
-  margin: 5% 3% 5% 0;
+/* This applies the container-fluid values ONLY inside the specified TITLE section */
+#title .container-fluid {
+  padding: 3% 15% 7%;
+  text-align: left;
 }
 
 /* Title Image */
@@ -67,26 +78,28 @@ p {
 .title-image {
   width: 60%;
   transform: rotate(25deg);
-
+  position: absolute;
+  right: 30%;
+  z-index: 0;
 }
 
-/* ID Selectors */
+/* Download Buttons */
 
-#title {
-  background-color: #ff4c68;
-  color: #fff;
+.download {
+  margin: 5% 3% 5% 0;
 }
 
 /* Features Section */
 
 #features {
-  padding: 7% 15%;
-  background-color: #fff;
   position: relative;
 }
 
+.feature-title {
+  font-size: 1.5rem;
+}
+
 .feature-box {
-  text-align: center;
   padding: 5%;
 }
 
@@ -102,25 +115,74 @@ p {
 /* Testimonials Section */
 
 #testimonials {
-  padding: 7% 15%;
-  text-align: center;
   background-color: #ef8172;
-  color: #fff;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
 }
 
 .testimonial-image {
-  width: 20%;
+  width: 10%;
   border-radius: 100%;
   margin: 20px;
 }
 
+/* Press Section */
+
 #press {
-  padding-bottom: 3%;
-  text-align: center;
   background-color: #ef8172;
+  padding-bottom: 3%;
 }
 
 .press-logo {
   width: 15%;
   margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* Media Queries */
+/* CSS is written as normal INSIDE the media query statement */
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+    /* DO NOT REMOVE THIS IN REFACTORING - THIS IS MEDIA QUERY SPECIFIC!!! */
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+    /* this rotates the image back to postion 0  */
+  }
+
+}
+
+/* Call To Action Section */
+
+
+/* Footer Section */
+
+#footer {
+  background-color: #fff;
+}
+
+.social-icon {
+
+  margin: 10px 10px 20px;
 }
